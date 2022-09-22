@@ -1,1 +1,0 @@
-These diagrams were rendered using MS Word, and than converted to image format for use in the document. Any improvements you may have are welcome, but not easily changed from these images directly. If you would like to recommend any changes, I would be very happy to change the image from the source file, and then upload the corrected image.
