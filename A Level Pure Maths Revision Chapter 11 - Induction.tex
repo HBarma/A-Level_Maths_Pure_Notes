@@ -1,0 +1,232 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{datetime}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{tabularray}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{makecell}
+\usepackage{courier}
+\usepackage[font=small, skip=0pt]{caption}
+\usepackage[font=scriptsize, skip=0pt]{subcaption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{matlab-prettifier}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{bigfoot}
+\usepackage{filecontents}
+\usepackage[nottoc]{tocbibind}
+
+\graphicspath{ {./mathimages/} }
+
+\newdateformat{Datea}{\THEDAY\ \monthname[\THEMONTH] \THEYEAR}
+\newdateformat{Dateb}{\monthname[\THEMONTH] \THEYEAR}
+
+%\allowdisplaybreaks
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\cotan}{cotan}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\cosech}{cosech}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccosec}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+
+\DeclareMathOperator{\cis}{cis}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Hatam Barma}
+\chead{\begin{tabular}[t]{@{}l@{}}\\Mathematics and Further Mathematics Pure Revision Summary\end{tabular}}
+\lhead{\Dateb\today}
+\cfoot{Page \thepage}
+
+\renewcommand{\thesection}{\arabic{section}} 
+
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\setcounter{section}{10}
+
+\allowdisplaybreaks
+
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=magenta!70!black
+}
+
+\begin{document}
+
+
+\begin{titlepage}
+   \begin{center}
+       \vspace*{2.5cm}
+	\huge
+       \textbf{A-Level Mathematics and Further Mathematics Pure Revision Summary} \\
+	\vspace{1cm}
+	\Large
+       \textbf{Chapter 11: Induction}
+            
+       \vspace{1.5cm}
+	\LARGE
+       \textbf{Hatam Barma} \\
+	\vspace{0.75cm}
+       \normalsize
+       \emph{Compiled on \Datea\today} \\
+
+       \vfill
+        
+
+	E-mail: hatam.barma@gmail.com
+   \end{center}
+\end{titlepage}
+
+
+\tableofcontents
+
+\clearpage
+\section{Induction}
+\vspace{0.5cm}
+
+
+\subsection{Iteration}
+\begin{itemize}
+\item[-] Ordinal definition gives $x_{n}$ in terms of $n$
+\item[-] Iterative definition gives $x_{n}$ in terms of $x_{n-1}$
+\item[-]Terms to describe sequences \begin{itemize} \item[-] Converging \item[-] Diverging \item[-] Periodic \item[-] Chaotic \item[-] Fixed \item[-] Oscillatory \item[-] Monotonic \end{itemize}
+\end{itemize}
+\small
+\begin{centering}
+\begin{tblr}{|[.75pt]|c|c|c|c||[.75pt]}
+\hline[1pt]
+Type of sequence & Example & Ordinal definition & Cardinal definition \\ \hline[.75pt]
+\SetCell[r=2]{c}Arithmetic & $a,\,a+d,\,a+2d,$& \SetCell[r=2]{c}$x_{n}=d(n-1)+a$ & $x_{n+1}=x_{n}+d$ \\
+& $\ldots,\,a+nd$ &  & $x_{1}=a$ \\ \hline
+\SetCell[r=2]{c}Geometric & $a,\,ar,\,ar^{2},$& \SetCell[r=2]{c}$x_{n}=ar^{n-1}$ & $x_{n+1}=r\cdot x_{n}$ \\
+& $\ldots,\,ar^{n}$&  & $x_{1}=a$ \\ \hline[.75pt]
+\end{tblr}
+\end{centering}
+\normalsize
+\vspace{0.5cm}
+
+
+\subsection{Mathematical induction}
+\begin{itemize}
+\item A Level FM AS / Year 1 \hspace{1cm} Pages 168 -- 169
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 2 -- 10
+\end{itemize} \par
+The idea behind an induction proof is to prove that a certain parameter is true for all integers $n$ by first assuming a statement is true for any arbitrary value of $n$, i.e. $n=k$, and then proving it for the next value of $n$, i.e. $n=k+1$. Then, by verifying it is true for the lowest value of $n$, i.e. $n=1$, we can deduce it is true for \emph{all} positive integer values of $n$. For example; \newline \par
+Given the sequence with a cardinal definition of
+\begin{equation*}
+\begin{cases}
+u_{n+1}&=2u_{n}+1\\
+u_{n}&=1\\
+\end{cases}
+\end{equation*}
+We claim that the ordinal definition is
+\begin{equation*}
+u_{n}=2^{n}-1
+\end{equation*} \par
+Base Case: In the case $n=1$, $u_{1}=2^{1}-1=1$, which is the correct value for $u_{1}$, so the claim holds true for the base case. \newline \par
+Induction step: If the claim is true for the case $n=k$, that is $u_{k}=2^{k}-1$, then using the cardinal definition, for the case $n=k+1$
+\begin{equation*}
+u_{k+1}=2\left[ 2^{k}-1 \right]+1=2\times2^{k}-2+1=2^{k+1}-1
+\end{equation*}
+Which is exactly the claim in the case $n=k+1$. \newline \par
+So, if the claim is true in the case $n=k$, then it is also true in the case $n=k+1$. However, since we have proved the claim holds true for the base case, that is $n=1$, by mathematical induction, we can prove that the claim holds true for all positive integers $n$.
+
+\begin{itemize}
+\item[Note:] Wording and language is a key part of an answer. Just writing out the induction step is insufficient for a full and proper proof, and will \emph{not} get full credit in an exam.
+\end{itemize}
+
+\vspace{0.5cm}
+
+
+\subsection{Induction in other contexts}
+\begin{itemize}
+\item A Level FM AS / Year 1 \hspace{1cm} Pages 169 -- 176
+\end{itemize} \par
+Proof by induction can also be used in contexts other than proving the $n^{th}$ term of a sequence, including divisibility and inequalities.
+\subsubsection*{Divisibility}
+\noindent\emph{Claim:} \newline \par
+$4^{n}+5^{n}+6^{n}$ is divisibile by 15 for all odd positive integers $n$. \newline \par
+\noindent\emph{Proof:} \newline \par
+Base case: When $n=1$, the claim gives $4^{1}+5^{1}+6^{1}=15$ which is divisible by $15$, so the claim is true in the case $n=1$. \newline \par
+
+Inductive step: If the claim is true in the case $n=k$, that is $4^{k}+5^{k}+6^{k}$ is divisible by 15, then in the case $n=k+2$, \par
+\begin{align*}
+4^{k+2}+5^{k+2}+6^{k+2}&=4^{2}\cdot4^{k}+5^{2}\cdot5^{k}+6^{2}\cdot6^{k} \\
+&=4^{2}\cdot4^{k}+\left( 4^{2}+9 \right)\cdot5^{k}+\left( 4^{2}+20 \right)\cdot6^{k} \\
+&=4^{k}\left( 4^{k}+5^{k}+6^{k} \right)+9\cdot5^{k}+20\cdot6^{k}
+\end{align*}
+We already know $4^{k}+5^{k}+6^{k}$ is divisible by 15 by hypothesis, $9\cdot5^{k}$ has a factor of $3$ and $5$, and by extension $15$, as does $20\cdot6^{k}$. \newline \par
+
+So if the claim is true in the case $n=k$, then it is also true in the case $n=k+2$. However, since the claim is true in the case $n=1$, then by mathematical induction, this is true for all odd integers $n\geq1$
+
+\subsubsection*{Inequality}
+\noindent\emph{Claim:} \newline \par
+$n!>3^{n}$ for all positive integers $n\geq7$.\newline\par
+\noindent\emph{Proof:}\newline\par
+Base case: When $n=7$, $7!=5040$, and $3^{7}=2187$, so $7!>3^{7}$. \newline \par
+
+Inductive step: If the claim is true in the case $n=k$, that is $k!>3^{k}$, then in the case $n=k+1$,
+\begin{align*}
+(k+1)!&=(k+1)(k!) & 3^{k+1}&=3\cdot3^{k}.
+\end{align*}
+By hypothesis, since $k!>3^{k}$, and $k+1>3$ since $k\geq7$,
+\begin{equation*}
+(k+1)k!>(k+1)3>3\cdot3^{k}
+\end{equation*}
+Therefore $(k+1)!>3^{k+1}$. \newline \par
+
+So if the claim is true in the case $n=k$, then it is also true in the case $n=k+1$. However, since it is true for the base case where $n=7$, the claim is true for all $n\geq7$ for $n\in\mathbb{Z}$.
+
+\subsubsection*{Matrices}
+\noindent\emph{Claim:} \newline \par
+For the matrix $\boldsymbol{A}=\begin{bmatrix}1&1\\0&1\end{bmatrix}$, $\boldsymbol{A}^{n}=\begin{bmatrix}1&n\\0&1\end{bmatrix}$.\newline\par
+\noindent\emph{Proof:}\newline\par
+Base case: When $n=1$, $\boldsymbol{A}^{n}=\begin{bmatrix}1&n\\0&1\end{bmatrix}=\begin{bmatrix}1&1\\0&1\end{bmatrix}$ so the claim holds true for the base case of $n=1$. \newline \par
+
+Inductive step: If the claim is true in the case $n=k$, that is $\boldsymbol{A}^{k}=\begin{bmatrix}1&k\\0&1\end{bmatrix}$, then in the case $n=k+1$,
+\begin{align*}
+\boldsymbol{A}^{k+1}&=\boldsymbol{A}\boldsymbol{A}^{k} \\
+&=\begin{bmatrix}1&1\\0&1\end{bmatrix}\begin{bmatrix}1&k\\0&1\end{bmatrix} \\
+&=\begin{bmatrix}1+0&k+1\\0+0&0+1\end{bmatrix}
+&=\begin{bmatrix}1&k+1\\0&1\end{bmatrix}
+\end{align*}
+Which is exactly the claim in the case $n=k+1$ \newline \par
+
+So if the claim is true in the case $n=k$, then it is also true in the case $n=k+1$. However, since it is true for the base case where $n=1$, the claim is true for all $n\geq1$ for $n\in\mathbb{Z}$.
+
+\vspace{0.5cm}
+
+\end{document}
