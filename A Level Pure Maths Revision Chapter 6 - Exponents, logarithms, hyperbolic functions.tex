@@ -1,0 +1,414 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{datetime}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{tabularray}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{makecell}
+\usepackage{courier}
+\usepackage[font=small, skip=0pt]{caption}
+\usepackage[font=scriptsize, skip=0pt]{subcaption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{matlab-prettifier}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{bigfoot}
+\usepackage{filecontents}
+\usepackage[nottoc]{tocbibind}
+
+\graphicspath{ {./mathimages/} }
+
+\newdateformat{Datea}{\THEDAY\ \monthname[\THEMONTH] \THEYEAR}
+\newdateformat{Dateb}{\monthname[\THEMONTH] \THEYEAR}
+
+%\allowdisplaybreaks
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\cotan}{cotan}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\cosech}{cosech}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccosec}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+
+\DeclareMathOperator{\cis}{cis}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Hatam Barma}
+\chead{\begin{tabular}[t]{@{}l@{}}\\Mathematics and Further Mathematics Pure Revision Summary\end{tabular}}
+\lhead{\Dateb\today}
+\cfoot{Page \thepage}
+
+\renewcommand{\thesection}{\arabic{section}} 
+
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\setcounter{section}{5}
+
+\allowdisplaybreaks
+
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=magenta!70!black
+}
+
+\begin{document}
+
+
+\begin{titlepage}
+   \begin{center}
+       \vspace*{2.5cm}
+	\huge
+       \textbf{A-Level Mathematics and Further Mathematics Pure Revision Summary} \\
+	\vspace{1cm}
+	\Large
+       \textbf{Chapter 6: Exponents, logarithms, hyperbolic functions}
+            
+       \vspace{1.5cm}
+	\LARGE
+       \textbf{Hatam Barma} \\
+	\vspace{0.75cm}
+       \normalsize
+       \emph{Compiled on \Datea\today} \\
+
+       \vfill
+        
+
+	E-mail: hatam.barma@gmail.com
+   \end{center}
+\end{titlepage}
+
+
+\tableofcontents
+
+
+\clearpage
+\section{Exponents, logarithms, hyperbolic functions}
+\vspace{0.5cm}
+
+\subsection{Laws of indices}
+\begin{itemize}
+\item A Level M AS / Year 1 \hspace{1cm} \phantom{ } Pages 17 -- 21
+\end{itemize} \par
+\begin{itemize}
+\item[-] Given the expression:
+\begin{equation*}
+a^{n}
+\end{equation*}
+$a$ is the base, and $n$ is the index / exponent
+\item[-]A negative index gives a reciprocal
+\begin{equation*}
+a^{-n}=\frac{1}{a^{n}}=\left(\frac{1}{a}\right)^{n}
+\end{equation*}
+\item[-] Fractions in the exponent correspond to surds / roots of the base
+\begin{equation*}
+x^{\frac{a}{b}}=\sqrt[b]{x^{a}}=\left(\sqrt[b]{x}\right)^{a}
+\end{equation*}
+\end{itemize}
+\vspace{0.5cm}
+
+
+\subsection{Laws of logarithms}
+\begin{itemize}
+\item A Level M AS / Year 1 \hspace{1cm} \phantom{ } Pages 114 -- 126
+\end{itemize}
+\begin{flalign*}
+\log_{a}(x)&=b \text{ means } a^{b}=x & \log_{a}\left(x^{n}\right)&=n\log_{a}(x)&& \\
+\log_{a}\left(a^{x}\right)&=x & \log_{a}(xy)&=\log_{a}(x)+\log_{a}(y) && \\
+\log_{a}(1)&=0 & \log_{a}\left(\frac{x}{y}\right)&=\log_{a}(x)-\log_{a}(y) &&
+\end{flalign*}
+The last two rules, for $\log_{a}(xy)$ and $\log_{a}\left(\frac{x}{y}\right)$ can be proved fairly simply. The proof for $\log_{a}(xy)$ is detailed below, and the proof for $\log_{a}\left(\frac{x}{y}\right)$ follows a very similar method.
+\begin{equation*}
+xy=\left( a^{\log_{a}(x)} \right)\left( a^{\log_{a}(y)} \right) = a^{\log_{a}(x)+\log_{a}(y)} = a^{\log_{a}(xy)}
+\end{equation*}
+
+\newpage
+
+
+\subsection{Euler's number, `$e$'}
+\begin{itemize}
+\item A Level M Year 2 \hspace{1cm} \phantom{ AS / } Pages 185 -- 195
+\end{itemize} \par
+The number $e$ is defined such that
+\begin{equation*}
+f(x)=f'(x)
+\end{equation*}
+This is called the exponential function;
+\begin{equation*}
+f(x)=e^{x}=\exp(x)
+\end{equation*}
+
+From first principles,
+\begin{flalign*}
+\frac{\mathrm{d}}{\mathrm{d}x}[f(x)]&=\lim_{h \to 0} \left[ \frac{f(x+h)-f(x)}{h} \right] && \\
+&=\lim_{h \to 0} \left[ \frac{e^{x+h}-e^{x}}{h} \right] && \\
+&=\lim_{h \to 0} \left[ \frac{e^{x}\left(e^{h}-1\right)}{h} \right] && \\
+&=e^{x}\lim_{h \to 0} \left[ \frac{\left(e^{h}-1\right)}{h} \right] \hspace{1cm} \text{and }\lim_{h \to 0} \left[ \frac{\left(e^{h}-1\right)}{h} \right]=1&& \\
+&=e^{x}\times 1 && \\
+&=e^{x} \hspace{1cm} \text{ as required}
+\end{flalign*}
+The logarithm with base $e$ is commonly denoted as
+\begin{equation*}
+\log_{e}(x)=\ln(x)
+\end{equation*}
+and is called the \emph{natural logarithm}
+\begin{itemize}
+\item[Note:] The chain rule still applies when differentiating, therefore:
+\begin{equation*}
+\frac{\mathrm{d}}{\mathrm{d}x}\left[ e^{f(x)} \right] = e^{f(x)} \times \frac{\mathrm{d}}{\mathrm{d}x}\left[ f(x) \right]
+\end{equation*}
+\end{itemize}
+\vspace{0.5cm}
+
+
+\subsection{Exponential models}
+\begin{itemize}
+\item A Level M AS / Year 1 \hspace{1cm} \phantom{ } Pages 128 -- 145
+\end{itemize} \par
+Exponential models are characterised by the following properties;
+\begin{itemize}
+\item[-] Where $A$ and $b$ are constants;\begin{equation*}y=Ae^{bx}\end{equation*}
+\item[-] Rate of change is proportional to the remaining / current quantity
+\begin{equation*}\frac{\mathrm{d}y}{\mathrm{d}x}=b\cdot Ae^{bx}=b\cdot y \end{equation*}
+\item[-] Fixed changes in the $x$ value correspond with fixed \emph{scale factor} changes in the output
+\item[-]Exponential models can be linearised by taking natural logarithms of both sides
+\begin{align*}
+y&=Ae^{bx} \\
+\ln(y)&=\ln\left(Ae^{bx}\right) \\
+&=\ln(A)+\ln\left(e^{bx}\right) \\
+&=\ln(A)+b\ln(e^{x}) \\
+&=\ln(A)+bx
+\end{align*}
+\end{itemize}
+\vspace{0.5cm}
+
+
+\subsection{The derivative of ln(x)}
+\begin{itemize}
+\item A Level M Year 2 \hspace{1cm} \phantom{ AS / } Pages 214 -- 216
+\end{itemize} \par
+The derivative of $\ln(x)$ is
+\begin{equation*}
+\frac{\mathrm{d}}{\mathrm{d}x}\left[ \ln(x) \right]=\frac{1}{x}
+\end{equation*}
+and so the integral of $\frac{1}{x}$ is 
+\begin{equation*}
+\int\frac{1}{x}=\ln(x)+c
+\end{equation*}
+Again, this can be used in conjunction with the chain rule. A couple of examples follow:
+\begin{align*}
+\frac{\mathrm{d}}{\mathrm{d}x}\left[ \ln(something) \right]&=\frac{1}{(something)}\times\frac{\mathrm{d}}{\mathrm{d}x}\left[ something \right] \\
+\frac{\mathrm{d}}{\mathrm{d}x}\left[ \ln\left(\sin(x)\right) \right]&=\frac{1}{\sin(x)}\times\cos(x)=\cot(x) \\
+\frac{\mathrm{d}}{\mathrm{d}x}\left[ \sin\left(\ln(x)\right) \right]&=\cos\left(\ln(x)\right)\times\frac{1}{x}=\frac{\cos\left(\ln(x)\right)}{x} \\
+\end{align*}
+
+
+\subsection{Expanding the domain -- ln(|x|)}
+The function $y=\ln(x)$ only is valid for inputs of $x>0$. However, the curve $y=\frac{1}{x}$ is valid for $x\in\mathbb{R}\setminus{0}$. Therefore to expand the validity of $ln(x)$ as a solution to the integral of $\frac{1}{x}$, we must use the modulus of $x$ inside the argument of the natural logarithm.
+\begin{align*}
+\frac{\mathrm{d}}{\mathrm{d}x}\left[ \ln(x) \right]&=\frac{1}{x} \, \, \text{for } x>0 \\
+\frac{\mathrm{d}}{\mathrm{d}x}\left[ \ln\left(\textcolor{red}{|}x\textcolor{red}{|}\right) \right]&=\frac{1}{x} \, \, \text{for } x\in\mathbb{R}\setminus{0} \\
+\end{align*}
+
+
+\subsection{The hyperbolic functions}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 129 -- 131
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 138 -- 142
+\end{itemize} \par
+The \emph{hyperbolic} functions are defined as follows:
+\begin{gather*}
+\cosh(x)=\frac{e^{x}+e^{-x}}{2} \\
+\sinh(x)=\frac{e^{x}-e^{-x}}{2} \\
+\tanh(x)=\frac{\sinh(x)}{\cosh(x)}=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}
+\end{gather*}
+Each with domain $\mathbb{R}$ \newline \par
+
+The \emph{inverse hyperbolic} functions are defined as follows:
+\begin{align*}
+\sech(x)&=\frac{1}{\cosh(x)}=\frac{e^{x}+e^{-x}}{2} \\
+\cosech(x)&=\frac{1}{\sinh(x)}=\frac{e^{x}-e^{-x}}{2} \\
+\coth(x)&=\frac{\cosh(x)}{\sinh(x)}=\frac{e^{x}+e^{-x}}{e^{x}-e^{-x}}
+\end{align*}
+Each with domain $\mathbb{R}$
+\vspace{0.5cm}
+
+\newpage
+
+\subsection{Calculus of the hyperbolic functions}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 142 -- 149
+\end{itemize} \par
+\begin{flalign*}
+\frac{\mathrm{d}}{\mathrm{d}x}\left[ \cosh(x) \right] &= \frac{\mathrm{d}}{\mathrm{d}x}\left[ \frac{e^{x}}{2}+\frac{e^{-x}}{2} \right]=\frac{e^{x}}{2}-\frac{e^{-x}}{2}=\frac{1}{2}\left(e^{x}-e^{-x}\right)=\sinh(x) && \\
+\frac{\mathrm{d}}{\mathrm{d}x}\left[ \sinh(x) \right] &= \frac{\mathrm{d}}{\mathrm{d}x}\left[ \frac{e^{x}}{2}-\frac{e^{-x}}{2} \right]=\frac{e^{x}}{2}+\frac{e^{-x}}{2}=\frac{1}{2}\left(e^{x}+e^{-x}\right)=\cosh(x) && \\
+\frac{\mathrm{d}}{\mathrm{d}x}\left[ \tanh(x) \right] &=\frac{\mathrm{d}}{\mathrm{d}x}\left[ \frac{e^{x}-e^{-x}}{e^{x}-e^{-x}} \right] && \\
+&=\frac{\left( e^{x}+e^{-x} \right)\left( e^{x}+e^{-x} \right)-\left( e^{x}-e^{-x} \right)\left( e^{x}+e^{-x} \right)}{\left( e^{x}+e^{-x} \right)^{2}} && \\
+&=\frac{\left( e^{x}+e^{-x} \right)^{2}-\left( e^{x}-e^{-x} \right)^{2}}{\left( e^{x}+e^{-x} \right)^{2}} && \\
+&=\frac{\cancel{e^{2x}}+\cancel{e^{-2x}}+2-\cancel{e^{2x}}-\cancel{e^{-2x}}+2}{\left( e^{x}+e^{-x} \right)^{2}} && \\
+&=\left( \frac{4}{\left( e^{x}+e^{-x} \right)^{2}} \right) = \left( \frac{2}{e^{x}+e^{-x}} \right)^{2}=\sech^{2}(x)&& \\
+\end{flalign*}
+
+
+\subsection{The inverse hyperbolic functions}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 131 -- 135
+\end{itemize} \par
+The inverse hyperbolic functions can be found by defining $y$ equal to the inverse function, rearranging to give $x$ in terms of $y$, so that $x$ is equal to the original hyperbolic, and then using the explicit form in exponentials to rearrange for $y$ in terms of $x$. This is demonstrated for the three hyperbolic functions below. \newline \par
+
+\subsubsection*{arcosh}
+\vspace{-0.8cm}
+\begin{flalign*}
+y&=\arcosh(x) && \\
+x&=\cosh(y) && \\
+x&=\frac{e^{y}+e^{-y}}{2} && \\
+2x&=e^{y}+e^{-y} && \\
+2x\cdot e^{y}&=e^{2y}+1 && \\
+0&=\left( e^{y} \right)^{2}-2x\cdot e^{y}+1 \hspace{1cm} \text{This is simply a quadratic in $e^{y}$} && \\
+e^{y}&=\frac{2x\pm\sqrt{4x^{2}-4}}{2} && \\
+e^{y}&=x\pm\sqrt{x^{2}-1} && \\
+y&=\ln\left( x+\sqrt{x^{2}-1} \right)
+\end{flalign*}
+Choose positive as convention, though both solutions satisfy the equation \newline \par
+
+\subsubsection*{arsinh}
+\vspace{-0.8cm}
+\begin{flalign*}
+y&=\arsinh(x) && \\
+x&=\sinh(y) && \\
+x&=\frac{e^{y}-e^{-y}}{2} && \\
+2x&=e^{y}-e^{-y} && \\
+2x\cdot e^{y}&=e^{2y}-1 && \\
+0&=\left( e^{y} \right)^{2}-2x\cdot e^{y}-1 \hspace{1cm} \text{This is simply a quadratic in $e^{y}$} && \\
+e^{y}&=\frac{2x\pm\sqrt{4x^{2}+4}}{2} && \\
+e^{y}&=x\pm\sqrt{x^{2}+1} && \\
+e^{y}&=x\textcolor{red}{+}\sqrt{x^{2}+1} && \\
+y&=\ln\left( x+\sqrt{x^{2}+1} \right)
+\end{flalign*}
+We reject the $x-\sqrt{x^{2}+1}$ root, because $e^{y}>0$ and since $x^{2}+1>x^{2}$, $\sqrt{x^{2}+1}>x$, so $x-\sqrt{x^{2}+1}<0$, and so is not a valid solution. \newline \par
+
+\subsubsection*{artanh}
+\vspace{-0.8cm}
+\begin{flalign*}
+y=\artanh(x)& && \\
+x=\tanh(y)=\frac{\sinh(x)}{\cosh(x)}&=\frac{e^{y}-e^{-y}}{e^{y}+e^{-y}}=\frac{e^{2y}-1}{e^{2y}+1} && \\
+\left( e^{2y}+1 \right)x&=xe^{2y}+x=e^{2y}-1 && \\
+xe^{2y}-e^{2y}&=-x-1 && \\
+e^{2y}(x-1)&=(-x-1) && \\
+e^{2y}&=\frac{1+x}{1-x} && \\
+y&=\frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)
+\end{flalign*}
+
+\subsection{Hyperbolic identities}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 136 -- 141
+\end{itemize} \par
+There are many identities involving hyperbolic functions, all of which are similar to trigonometric identities. The relationship between hyperbolic and trigonometric identities is covered by Osborne's Rule (section \ref{osborne}), but for now, here are the important ones to learn.
+\begin{align*}
+\cosh(x)+\sinh(x)&= e^{x} & \cosh(x)-\sinh(x)&= e^{-x} \\
+\cosh^{2}(x)-\sinh^{2}(x)&= 1 & 1-\tanh^{2}(x)&=\sech^{2}(x) \\
+\coth^{2}(x)-1&=\cosech^{2}(x) & \cosh^{2}+\sinh^{2}(x)&=\cosh(2x) \\
+2\cosh^{2}(x)+1&=\cosh(2x) & 1+2\sinh^{2}(x)&=\cosh(2x) \\
+\frac{2\tanh(x)}{1+\tanh^{2}(x)}&=\tanh(2x) & 2\sinh(x)\cosh(x)&=\sinh(2x)
+\end{align*}
+
+\begin{align*}
+\cosh(x+y)&=\cosh(x)\cosh(y)+\sinh(x)\sinh(y) \\
+\cosh(x)+\cosh(y)&=2\cosh\left( \frac{x+y}{2} \right)\cosh\left( \frac{x-y}{2} \right) \\
+\end{align*}
+
+
+\subsection{Osborne's Rule}
+\label{osborne}
+Osborne's Rule is a way of taking trigonometric identities, and obtaining its equivalent hyperbolic identity. See here the similarities between some trigonometric and hyperbolic identities;
+\begin{align*}
+\cos^{2}(x)+\sin^{2}(x)&=1 & \cosh^{2}(x)-\sinh^{2}(x)&=1 \\
+\cos^{2}(x)-\sin^{2}(x)&=\cos(2x) & \cosh^{2}(x)+\sinh^{2}(x)&=\cosh(2x) \\
+2\sin(x)\cos(x)&=\sin(2x) & 2\sinh(x)\cosh(x)&=\sinh(2x)
+\end{align*}
+Osborne's Rule:
+\begin{enumerate}
+\item Take a trigonometric identity involving terms of sine and cosine \textbf{\underline{only}}
+\item Replace any $\sin$ terms with $\sinh$, and any $\cos$ terms with $\cosh$
+\item Change the sign in front of any terms involving $\sinh^{2}$
+\end{enumerate}
+\vspace{0.5cm}
+
+
+\subsection{Derivatives of the inverse hyperbolic functions}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 155 -- 162
+\end{itemize} \par
+Derivatives of the inverse hyperbolic functions can be found using implicit differentiation (see section \ref{implicitdifferentiation}). This is the origin of some of the standard integrals listed in section \ref{usefulintegrals}
+
+\subsubsection*{arcosh}
+\vspace{-0.8cm}
+\begin{flalign*}
+y&=\arcosh(x) && \\
+x&=\cosh(y) && \\
+1&=\sinh(y)\frac{\mathrm{d}y}{\mathrm{d}x} && \\
+\frac{\mathrm{d}y}{\mathrm{d}x}&=\frac{1}{\sinh(y)}=\frac{1}{\pm\sqrt{\cosh^{2}(y)-1}}=\frac{1}{\pm\sqrt{x^{2}-1}}
+\end{flalign*}
+\begin{equation*}
+\frac{\mathrm{d}y}{\mathrm{d}x}\left[\arcosh(x)\right]=\frac{1}{\sqrt{x^{2}-1}}
+\end{equation*}
+
+\subsubsection*{arsinh}
+\vspace{-0.8cm}
+\begin{flalign*}
+y&=\arsinh(x) && \\
+x&=\sinh(y) && \\
+1&=\cosh(y)\frac{\mathrm{d}y}{\mathrm{d}x} && \\
+\frac{\mathrm{d}y}{\mathrm{d}x}&=\frac{1}{\cosh(y)}=\frac{1}{\pm\sqrt{\sinh^{2}(y)+1}}=\frac{1}{\pm\sqrt{x^{2}+1}}
+\end{flalign*}
+\begin{equation*}
+\frac{\mathrm{d}y}{\mathrm{d}x}\left[\arsinh(x)\right]=\frac{1}{\sqrt{x^{2}+1}}
+\end{equation*}
+
+\subsubsection*{artanh}
+\vspace{-0.8cm}
+\begin{flalign*}
+y&=\artanh(x) && \\
+x&=\tanh(y) && \\
+1&=\sech^{2}(y)\frac{\mathrm{d}y}{\mathrm{d}x} && \\
+\frac{\mathrm{d}y}{\mathrm{d}x}&=\frac{1}{\sech^{2}(y)}=\frac{1}{1-\tanh^{2}(y)}=\frac{1}{1-x^{2}}
+\end{flalign*}
+\begin{equation*}
+\frac{\mathrm{d}y}{\mathrm{d}x}\left[\artanh(x)\right]=\frac{1}{1-x^{2}}
+\end{equation*}
+\vspace{0.5cm}
+
+
+\end{document}
