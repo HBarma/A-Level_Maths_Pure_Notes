@@ -1,0 +1,291 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{datetime}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{tabularray}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{makecell}
+\usepackage{courier}
+\usepackage[font=small, skip=0pt]{caption}
+\usepackage[font=scriptsize, skip=0pt]{subcaption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{matlab-prettifier}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{bigfoot}
+\usepackage{filecontents}
+\usepackage[nottoc]{tocbibind}
+
+\graphicspath{ {./mathimages/} }
+
+\newdateformat{Datea}{\THEDAY\ \monthname[\THEMONTH] \THEYEAR}
+\newdateformat{Dateb}{\monthname[\THEMONTH] \THEYEAR}
+
+%\allowdisplaybreaks
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\cotan}{cotan}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\cosech}{cosech}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccosec}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+
+\DeclareMathOperator{\cis}{cis}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Hatam Barma}
+\chead{\begin{tabular}[t]{@{}l@{}}\\Mathematics and Further Mathematics Pure Revision Summary\end{tabular}}
+\lhead{\Dateb\today}
+\cfoot{Page \thepage}
+
+\renewcommand{\thesection}{\arabic{section}} 
+
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\setcounter{section}{7}
+
+\allowdisplaybreaks
+
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=magenta!70!black
+}
+
+\begin{document}
+
+
+\begin{titlepage}
+   \begin{center}
+       \vspace*{2.5cm}
+	\huge
+       \textbf{A-Level Mathematics and Further Mathematics Pure Revision Summary} \\
+	\vspace{1cm}
+	\Large
+       \textbf{Chapter 8: Maclaurin series and the binomial expansion theorem}
+            
+       \vspace{1.5cm}
+	\LARGE
+       \textbf{Hatam Barma} \\
+	\vspace{0.75cm}
+       \normalsize
+       \emph{Compiled on \Datea\today} \\
+
+       \vfill
+        
+
+	E-mail: hatam.barma@gmail.com
+   \end{center}
+\end{titlepage}
+
+
+\tableofcontents
+
+\clearpage
+\section{Maclaurin series and the binomial expansion theorem}
+\vspace{0.5cm}
+
+
+\subsection{Maclaurin Series}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 170 -- 174
+\end{itemize} \par
+Assume any function (not necessarily a polynomial) can be expanded as a polynomial such that
+\begin{equation*}
+f(x)\approx a_{0}+a_{1}x+a_{2}x^{2}+a_{3}x^{3}+\cdots
+\end{equation*}
+Then if we can find coefficients $a_{k}$ to match the true values of $f(0)$, $f'(0)$, $f''(0)$, etc. then we have a good approximation for the function.
+
+\scriptsize
+\begin{flalign*}
+f(x)&&\approx &&a_{0}&&+&&a_{1}&&x&&+&&&a_{2}&&x^{2}&+&&&a_{3}&&x^{3}&+&&&a_{4}&&x^{4}& && \\
+f'(x)&&\approx&&&& &&a_{1}&&&&+&&2\times &a_{2}&&x&+&&3\times &a_{3}&&x^{2}&+&&4\times &a_{4}&&x^{3}& && \\
+f''(x)&&\approx&&&& &&&&&&+&&2\times &a_{2}&&&+&&2\times3\times &a_{3}&&x&+&&3\times4\times &a_{4}&&x^{2}& && \\
+f'''(x)&&\approx&&&& &&&&&&+&&&&&&+&&2\times3\times &a_{3}&&&+&&2\times3\times4\times &a_{4}&&x& && \\
+\end{flalign*}
+\normalsize
+Using this expansion,
+\begin{align*}
+f(0)&=a_{0} & \Rightarrow& & a_{0}&=\frac{f(0)}{0!} && \\
+f'(0)&=a_{1} & \Rightarrow& & a_{1}&=\frac{f'(0)}{0!} && \\
+f''(0)&=2\times a_{2} & \Rightarrow& & a_{2}&=\frac{f''(0)}{0!} && \\
+f'''(0)&=2\times 3\times a_{3} & \Rightarrow& & a_{3}&=\frac{f'''(0)}{0!} && \\
+& & & & && \\
+f^{(n)}(0)&=2\times 3 \times \cdots \times n \times a_{n} & \Rightarrow& & a_{n}&=\frac{f^{(n)}(0)}{0!} &&
+\end{align*}
+So assuming the function is differentiable infinitely many times, we have a way of finding coefficients that give a Maclaurin series that converges to the function.
+
+\begin{itemize}
+\item[Note:] The radius of convergence is the distance $r$ such that if $|x|<r$, then the series converges to the true value as the number of terms tends to infinity.
+\end{itemize}
+\vspace{0.5cm}
+
+
+\subsection{Standard Maclaurin Series}
+\label{standardmaclaurin}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 175 -- 178
+\end{itemize} \par
+\subsubsection*{Exponential function}
+\vspace{-.8cm}
+\begin{align*}
+a_{0}&=e^{0} & a_{1}&=\frac{e^{0}}{1!} & a_{2}&=\frac{e^{0}}{2!} & \cdots& & a_{n}&=\frac{e^{0}}{n!} \\
+a_{0}&=1 & a_{1}&=1 & a_{2}&=\frac{1}{2!} & \cdots& & a_{n}&=\frac{1}{n!} \\
+\end{align*}
+\begin{equation*}
+f(x)=e^{x}=1+(x)+\frac{1}{2!}(x)^{2}+\frac{1}{3!}(x)^{3}+\cdots+\frac{1}{n!}(x)^{n}
+\end{equation*} \newline
+\subsubsection*{Sine}
+\vspace{-.8cm}
+\begin{align*}
+a_{0}&=\sin(0) & a_{1}&=\cos(0) & a_{2}&=\frac{-\sin(0)}{2!} & a_{3}&=\frac{-\cos(0)}{3!}& \cdots& \\
+a_{0}&=0 & a_{1}&=1 & a_{2}&=0 & a_{3}&=-\frac{1}{3!} & \cdots& \\
+\end{align*}
+\begin{equation*}
+f(x)=\sin(x)=(x)-\frac{1}{3!}(x)^{3}+\frac{1}{5!}(x)^{5}-\cdots
+\end{equation*} \newline
+\subsubsection*{Cosine}
+\vspace{-.8cm}
+\begin{align*}
+a_{0}&=\cos(0) & a_{1}&=-\sin(0) & a_{2}&=\frac{-\cos(0)}{2!} & a_{3}&=\frac{\sin(0)}{3!}& \cdots& \\
+a_{0}&=1 & a_{1}&=0 & a_{2}&=-\frac{1}{2!} & a_{3}&=0 & \cdots& \\
+\end{align*}
+\begin{equation*}
+f(x)=\cos(x)=1-\frac{1}{2!}(x)^{2}+\frac{1}{4!}(x)^{4}-\cdots
+\end{equation*} \newline
+\subsubsection*{Natural logarithm}
+The Maclaurin series for $f(x)=\ln(x)$ Does not exist, sine $\ln(x)$ is undefined at $0$. So, we can define a series for $f(x)=\ln(1+x)$.
+\begin{align*}
+f(x)&=\ln(1+x) & f(0)&=0 & a_{0}&=0 \\
+f'(x)&=(1+x)^{-1} & f'(0)&=1 & a_{1}&=1 \\
+f''(x)&=-(1+x)^{-2} & f''(0)&=-1 & a_{2}&=-\frac{1}{2} \\
+f'''(x)&=2(1+x)^{-3} & f'''(0)&=2 & a_{3}&=\frac{1}{3} \\
+f''''(x)&=-6(1+x)^{-4} & f''''(0)&=-6 & a_{4}&=-\frac{1}{4} \\
+\end{align*}
+\vspace{-.8cm}
+\begin{gather*}
+f^{(r)}(x)=(-1)^{r-1}(r-1)!(1+x)^{-r} \hspace{1.5cm} f^{(r)}(0)=(-1)^{r-1}(r-1)! \\
+ a_{r}=\frac{(-1)^{r-1}(r-1)!}{r!}=\frac{(-1)^{r-1}}{r}
+\end{gather*}
+\begin{equation*}
+f(x)=\ln(1+x)=(x)-\frac{1}{2!}(x)^{2}+\frac{1}{3!}(x)^{3}-\frac{1}{4!}(x)^{4}+\cdots
+\end{equation*}
+\newline \par
+\vspace{-.3cm}
+With all of these, $(x)$ can be replaced by anything, such as $(2x)$, etc. since these are identities
+\vspace{0.5cm}
+
+
+\subsection{Euler's form}
+\label{eulersform}
+Consider the Maclaurin expansions of the exponential function, sine, and cosine.
+\begin{align*}
+e^{x}&=1+(x)+\frac{1}{2!}(x)^{2}+\frac{1}{3!}(x)^{3}+\cdots \\
+\sin(x)&=(x)-\frac{1}{3!}(x)^{3}+\frac{1}{5!}(x)^{5}-\frac{1}{7!}(x)^{7}+\cdots \\
+\cos(x)&=1-\frac{1}{2!}(x)^{2}+\frac{1}{4!}(x)^{4}-\frac{1}{6!}(x)^{6}+\cdots
+\end{align*} \newline \par
+
+Now consider the expansion of $e^{i\theta}$:
+\begin{flalign*}
+e^{i\theta}&=1+(i\theta)+\frac{1}{2!}(i\theta)^{2}+\frac{1}{3!}(i\theta)^{3}+\frac{1}{4!}(i\theta)^{4}+\frac{1}{5!}(i\theta)^{5}+\frac{1}{6!}(i\theta)^{6}+\frac{1}{7!}(i\theta)^{7}+\cdots \\
+e^{i\theta}&=1+i\theta+\frac{1}{2!}i^{2}\theta^{2}+\frac{1}{3!}i^{3}\theta^{3}+\frac{1}{4!}i^{4}\theta^{4}+\frac{1}{5!}i^{5}\theta^{5}+\frac{1}{6!}i^{6}\theta^{6}+\frac{1}{7!}i^{7}\theta^{7}+\cdots \\
+e^{i\theta}&=1+i\theta-\frac{1}{2!}\theta^{2}-\frac{1}{3!}i\theta^{3}+\frac{1}{4!}\theta^{4}+\frac{1}{5!}i\theta^{5}-\frac{1}{6!}i\theta^{6}-\frac{1}{7!}i\theta^{7}+\cdots \\
+e^{i\theta}&=\left[1-\frac{1}{2!}\theta^{2}+\frac{1}{4!}\theta^{4}-\frac{1}{6!}\theta^{6}+\cdots\right]-i\left[\theta-\frac{1}{3!}\theta^{3}+\frac{1}{5!}\theta^{5}-\frac{1}{7!}i\theta^{7}+\cdots\right] \\
+& \\
+e^{i\theta}&\equiv\cos(\theta)+i\sin(\theta)
+\end{flalign*}
+A particular case of this is when $\theta=\pi$, so we get
+\begin{gather*}
+e^{i\pi}=-1 \hspace{2cm} e^{i\pi}+1=0
+\end{gather*}
+Which is known as \emph{Euler's formula}
+\vspace{0.5cm}
+
+
+\subsection{Binomial expansion theorem}
+\begin{itemize}
+\item A Level M AS / Year 1 \hspace{1cm} \phantom{ } Pages 149 -- 159
+\end{itemize} \par
+Consider the following expansion;
+\begin{equation*}
+(a+b)^{n}=a^{n}b^{0}+n\left( a^{n-1}b^{1} \right) +  \cdots +n\left( a^{1}b^{n-1} \right)+a^{0}b^{n}
+\end{equation*}
+where coefficients follow Pascal's triangle, and can be determined by the \emph{choose} function, where $^{n}C_{k}=\frac{n!}{k!(n-k)!}$ \newline \par
+
+This is given by the general binomial theorem (section \ref{generalbinomialtheorem}), since the $n^{th}$ term in the expansion will have a term which is $(n-n)=0$ in the coefficient of $x^{r}$ for all $r>n$, so all those terms amount to 0.
+\vspace{0.5cm}
+
+
+\subsection{General binomial theorem}
+\label{generalbinomialtheorem}
+\begin{itemize}
+\item A Level M Year 2 \hspace{1cm} \phantom{ AS / } Pages 107 -- 115
+\end{itemize} \par
+To obtain the general binomial theorem, take the Maclaurin series of the function $f(x)=(1+x)^{n}$
+\small
+\begin{align*}
+f(x)&=(1+x)^{n} & f(0)&=1  \\
+f'(x)&=(n)(1+x)^{n-1} & f'(0)&=(n)  \\
+f''(x)&=(n)(n-1)(1+x)^{n-2} & f''(0)&=(n)(n-1)  \\
+f'''(x)&=(n)(n-1)(n-2)(1+x)^{n-3} & f'''(0)&=(n)(n-1)(n-2)  \\
+&&& \\
+f^{(r)}(x)&=(n)(n-1)\cdots(n-(r-1))(1+x)^{r} & f^{(n)}(0)&=(n)(n-1)\cdots (n-r+1) \\
+\end{align*}
+\vspace{-1.2cm}
+\begin{align*}
+a_{0}&=1 \\
+a_{1}&=n \\
+a_{2}&=\frac{(n)(n-1)}{2!} \\
+a_{3}&=\frac{(n)(n-1)(n-2)}{3!} \\
+&\;\;\vdots \\
+a_{n}&=\frac{(n)(n-1)\cdots (n-r+1)}{r!} \\
+\end{align*}
+\normalsize
+
+Therefore;
+\begin{multline*}
+(1+(x))^{n}\approx1+(n)(x)+\frac{(n)(n-1)}{2!}x^{2}+\frac{(n)(n-1)(n-2)}{3!}x^{3}+\\ \,\cdots\, + \frac{(n)(n-1)\cdots (n-r+1)}{n!}x^{r} +\,\cdots
+\end{multline*}
+Which is valid for $|x|<1$ \newline \par
+
+So, suppose we want we want to expand $(2-x)^{-1}$.
+\begin{equation*}
+(2-x)^{-1}=\left[ 2\left(1-\frac{x}{2}\right) \right]^{-1}=\frac{1}{2}\left(1+\left(-\frac{x}{2}\right)\right)^{-1}
+\end{equation*}
+And the general binomial expansion above can be applied to this to find the Maclaurin series. This example is valid for $\left| \left(-\frac{x}{2}\right)  \right|<1$, so $|x|<2$.
+
+\vspace{0.5cm}
+
+\end{document}
