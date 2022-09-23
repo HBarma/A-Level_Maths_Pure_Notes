@@ -5,4 +5,4 @@ This guide was written primarily between July 2019 and May 2020, and is a reason
 
 The order in which this is arranged is arbitrary, and where possible, I have tried to group similar topics together. Within this document, there is no real distinction between what is covered by the single mathematics and further mathematics courses, so you may have to look a little harder to find what you are looking for in here, compared to a textbook.
 
-All the diagrams and images were rendered using MS Word and Autograph. I am of course very happy to update any corrections, as editing the PNG files directly requires a little more effort, compared to adjusting the original.
+The folder mathimages contains PNGs of all the diagrams and figures used in the guide. All the diagrams and images were created using either MS Word or Autograph. I am of course very happy to update any corrections, as editing the PNG files directly requires a little more effort, compared to adjusting the original.
