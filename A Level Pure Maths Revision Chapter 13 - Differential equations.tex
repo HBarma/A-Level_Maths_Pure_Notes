@@ -1,0 +1,374 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{datetime}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{tabularray}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{makecell}
+\usepackage{courier}
+\usepackage[font=small, skip=0pt]{caption}
+\usepackage[font=scriptsize, skip=0pt]{subcaption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{matlab-prettifier}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{bigfoot}
+\usepackage{filecontents}
+\usepackage[nottoc]{tocbibind}
+
+\graphicspath{ {./mathimages/} }
+
+\newdateformat{Datea}{\THEDAY\ \monthname[\THEMONTH] \THEYEAR}
+\newdateformat{Dateb}{\monthname[\THEMONTH] \THEYEAR}
+
+%\allowdisplaybreaks
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\cotan}{cotan}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\cosech}{cosech}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccosec}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+
+\DeclareMathOperator{\cis}{cis}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Hatam Barma}
+\chead{\begin{tabular}[t]{@{}l@{}}\\Mathematics and Further Mathematics Pure Revision Summary\end{tabular}}
+\lhead{\Dateb\today}
+\cfoot{Page \thepage}
+
+\renewcommand{\thesection}{\arabic{section}} 
+
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\setcounter{section}{12}
+
+\allowdisplaybreaks
+
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=magenta!70!black
+}
+
+\begin{document}
+
+
+\begin{titlepage}
+   \begin{center}
+       \vspace*{2.5cm}
+	\huge
+       \textbf{A-Level Mathematics and Further Mathematics Pure Revision Summary} \\
+	\vspace{1cm}
+	\Large
+       \textbf{Chapter 13: Differential equations}
+            
+       \vspace{1.5cm}
+	\LARGE
+       \textbf{Hatam Barma} \\
+	\vspace{0.75cm}
+       \normalsize
+       \emph{Compiled on \Datea\today} \\
+
+       \vfill
+        
+
+	E-mail: hatam.barma@gmail.com
+   \end{center}
+\end{titlepage}
+
+
+\tableofcontents
+
+\clearpage
+\section{Differential equations}
+\vspace{0.5cm}
+
+
+\subsection{Related rates of change}
+\label{relatedratesofchange}
+\begin{itemize}
+\item A Level M Year 2 \hspace{1cm} \phantom{ AS / } Pages 265 -- 269
+\end{itemize} \par
+Leibniz notation $\left( \frac{\mathrm{d}}{\mathrm{d}x}\right)$ does not denote a fraction, however it can behave as one. For example, enlarging a square with initital side length of $5\,cm$  and the rate of increase is $3\,cm s^{-1}$, What is the rate of increase in area when the side length is $17\,cm$? \newline \par
+\begin{tblr}{lcc}
+Variables & $\hspace{.5cm}$Relationships$\hspace{.5cm}$ & Goal \\
+$A$, area $\left(cm^{2}\right)$ & $A=x^{2}$ & \\
+$x$, side length $\left(cm\right)$ & $\frac{\mathrm{d}x}{\mathrm{d}t}=3$ & $\frac{\mathrm{d}A}{\mathrm{d}t}$\\
+$t$, time $\left(s\right)$ &  & \\
+\end{tblr}
+\begin{align*}
+\frac{\mathrm{d}A}{\mathrm{d}x}&=2x & \frac{\mathrm{d}x}{\mathrm{d}t}&=3 & \frac{\mathrm{d}A}{\mathrm{d}x}\times\frac{\mathrm{d}x}{\mathrm{d}t}&=\frac{\mathrm{d}A}{\mathrm{d}t} \\
+& & & & 2x\times3&=6x\,cm^{2}\,s^{-1} \\
+\end{align*}
+\begin{equation*}
+\frac{\mathrm{d}A}{\mathrm{d}t}\bigg|_{x=17\,cm}=6\times17=102\,cm^{2}\,s^{-1}
+\end{equation*}
+\vspace{0.5cm}
+
+
+\subsection{Separable differential equations}
+\begin{itemize}
+\item A Level M Year 2 \hspace{1cm} \phantom{ AS / } Pages 283 -- 289
+\end{itemize} \par
+With some differential equations, it is possible to make $\frac{\mathrm{d}y}{\mathrm{d}x}$ a multiple of $y$, and then integrate from that step. After integrating, but before rearranging, make sure the constant term is put back in at this step, since it may change from simply being a $+c$ term in its final form. For example;
+\begin{flalign*}
+\frac{1}{y}\frac{\mathrm{d}y}{\mathrm{d}x}&=x & &\Rightarrow & \ln(y)&=\frac{x^{2}}{2}+c & &y=e^{\frac{x^{2}}{2}+c}=e^{\frac{x^{2}}{2}}\times e^{c}=Ae^{x^{2}} && \\
+\frac{1}{y}\frac{\mathrm{d}y}{\mathrm{d}x}&=x & &\nRightarrow & \ln(y)&=\frac{x^{2}}{2} & &y\neq e^{\frac{x^{2}}{2}}+c\phantom{aaa} \textbf{\underline{INCORRECT}} && \\
+\end{flalign*}
+
+$Ae^{\frac{x^{2}}{2}}\neq e^\frac{x^{2}}{2}+c$, and so in the correct method, the constant comes out as a coefficient of the `$x$-containing term', whereas just adding it on at the end gives a pure constant to the function.
+\vspace{0.5cm}
+
+
+\subsection{First order linear differential equations -- Integrating factor}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 227 -- 231
+\end{itemize} \par
+If a first order linear equation in one variable is not separable, for example $\frac{\mathrm{d}y}{\mathrm{d}x}=x^{2}-xy$, we can use the integrating factor method. \newline \par
+
+General first order linear differential equation:
+\begin{equation*}
+\frac{\mathrm{d}y}{\mathrm{d}x}+P(x)y=Q(x)
+\end{equation*} \newline \par
+
+Consider the following
+\begin{align*}
+\frac{\mathrm{d}}{\mathrm{d}x}\left[ I(x)y \right]=I(x)\frac{\mathrm{d}y}{\mathrm{d}x}+I'(x)y&=I(x)\cdot\frac{\mathrm{d}y}{\mathrm{d}x}+\frac{\mathrm{d}\left[ I(x) \right]}{\mathrm{d}x}\cdot y \\
+I(x)\cdot\frac{\mathrm{d}y}{\mathrm{d}x}+\left(I(x)P(x)\right)\cdot y&=I(x)Q(x)
+\end{align*}
+We need
+\begin{equation*}
+I(x)P(x)=\frac{\mathrm{d}I}{\mathrm{d}x}
+\end{equation*} 
+Therefore
+\begin{equation*}
+\int \frac{1}{I}\,\mathrm{d}I=\int P(x)\,\mathrm{d}x
+\end{equation*}
+And if
+\begin{equation*}
+\ln(I(x))=\int P(x)\,\mathrm{d}x
+\end{equation*}
+Then
+\begin{equation*}
+I(x)=e^{\int P(x)\,\mathrm{d}x}
+\end{equation*} \newline \par
+
+So given a first order linear differential equation which is inseparable $\left(\frac{\mathrm{d}y}{\mathrm{d}x}+P(x)y=Q(x)\right)$, we can multiply it by an \emph{integrating factor}, $I(x)$, to turn it into something of the form:
+\begin{equation*}
+I(x)\frac{\mathrm{d}y}{\mathrm{d}x}+I'(x)y=I(x)Q(x)
+\end{equation*}
+Since $I(x)$ is chosen such that $I(x)P(x)=I'(x)$, which is the result of applying a product rule derivative of $I(x)y$ with respect to $x$.
+\vspace{0.5cm}
+
+
+\subsection{Homogeneous second order linear differential equations}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 231 -- 235
+\end{itemize} \par
+A general second order homogeneous linear differential equation can be expressed in the form
+\begin{equation*}
+a\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}+b\frac{\mathrm{d}y}{\mathrm{d}x}+cy=0
+\end{equation*}
+To find a solution, try something of the form
+\begin{equation*}
+y=e^{\lambda x}
+\end{equation*}
+When substituted into the general equation this gives
+\begin{equation*}
+a\lambda^{2}e^{\lambda x}+b\lambda e^{\lambda x} + c e^{\lambda x}=0
+\end{equation*}
+Dividing through by $e^{\lambda x}$, this yields the \emph{auxiliary equation}
+\begin{equation*}
+a\lambda^{2}+b\lambda+c=0
+\end{equation*}
+\begin{itemize}
+\item[If:] $\lambda$ has two real roots, the general solution is of the form
+\begin{equation*}
+y=Ae^{\lambda_{1}x}+Be^{\lambda_{2}x}
+\end{equation*}
+\item[If:] $\lambda$ has one repeated root, the general solution is of the form
+\begin{equation*}
+y=Ae^{\lambda x}+Bxe^{\lambda x}
+\end{equation*}
+\item[If:] $\lambda$ has complex conjugate roots, the general solution is of the form
+\begin{equation*}
+y=e^{\mathfrak{Re}[\lambda]x}\left(A\cos\left(\mathfrak{Im}[\lambda]x\right)+B\sin\left(\mathfrak{Im}[\lambda]x\right)\right)
+\end{equation*}
+\end{itemize}
+\vspace{0.5cm}
+
+
+\subsection{Non-homogeneous second order linear differential equations}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 235 -- 240
+\end{itemize} \par
+A general second order homogeneous linear differential equation can be expressed in the form
+\begin{equation*}
+a\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}+b\frac{\mathrm{d}y}{\mathrm{d}x}+cy=f(x)
+\end{equation*}
+The general solution to this is of the form $GS=CF(x)+PI(x)$, where: \newline \par
+\noindent $CF(x)$ is a \emph{complementary function} which satisfies:
+\begin{equation*}
+a\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}+b\frac{\mathrm{d}y}{\mathrm{d}x}+cy=0
+\end{equation*}
+$PI(x)$ is a \emph{particular integral} which satisfies:
+\begin{equation*}
+a\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}+b\frac{\mathrm{d}y}{\mathrm{d}x}+cy=f(x)
+\end{equation*} \newline \par
+
+\scriptsize
+\begin{centering}
+\begin{tblr}{|[.75pt]| l | l ||[.75pt]}
+\hline[1pt]
+\textbf{For a right hand side of the form:} & \textbf{Try a particular integral of the form} \\ \hline[.75pt]
+Polynomial & \emph{General polynomial} of the same order \\
+\emph{e.g.} $ax^{2}+bx+c$ & \emph{e.g.} $px^{2}+qx+r$ \\ \hline
+$ae^{bx}$ & $pe^{bx}$ \\ \hline
+$A\cos(\omega x)$ \emph{and / or} $B\sin(\omega x)$ & $p\cos(\omega x)+q\sin(\omega x)\,\,\,$ \tiny{\emph{(Must include both terms)}} \\ \hline[.75pt]
+\end{tblr}
+\end{centering} \newline \par
+\normalsize
+Where all constants of the particular integral are to be determined by substituting the trial solution in to the original differential equation.
+\vspace{0.5cm}
+
+
+\subsection{Systems of differential equations}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 256 -- 259
+\end{itemize} \par
+\begin{align*}
+\frac{\mathrm{d}x}{\mathrm{d}t}&=f(x,y,t) & \frac{\mathrm{d}y}{\mathrm{d}t}&=g(x,y,t)
+\end{align*}
+Where $f$ and $g$ are functions involving $x$, $y$, and $t$. \newline \par
+
+In order to solve, we must eliminate one variable of $x$ and $y$. To do this, rearrange one equation to give $y$ in terms of $x$, $t$, and $\dot{x}$. Differentiate this expression for $y$ to give an expression for $\dot{y}$. Substitute these expressions for $y$, and $\dot{y}$ into the other equation to give a non-homogeneous second order linear differential equation in terms of $x$, and derivatives of $x$ with respect to $t$. Solve to obtain an expression for $x$ in terms of $t$, and then substitute in to one of the original differential equations to find $y$ in terms of $t$. For example;
+\begin{align*}
+\dot{x}&=4x-y+50\sin(t) &
+\dot{y}&=6x-3y+50\cos(t)
+\end{align*}
+Subject to initial conditions
+\begin{align*}
+x(t=0)&=0 & y(t=0)&=15
+\end{align*}
+\begin{align*}
+y&=4x-\dot{x}+50\sin(t) & &\Rightarrow & \dot{y} =4-\ddot{x}+50\cos(t)
+\end{align*}
+\begin{equation*}
+4-\ddot{x}+50\cos(t)=6x-3\left(4x-\dot{x}+50\sin(t)\right)+50\cos(t) \\
+\end{equation*}
+\begin{align*}
+\ddot{x}-\dot{x}-6x&=150\sin(t) \\
+\lambda^{2}-\lambda-6&=0 \\
+(\lambda-3)(\lambda+2)&=0
+\end{align*}
+\begin{align*}
+CF:\hspace{.3cm}&x_{\text{\tiny{$CF$}}}=Ae^{-2t}+Be^{3t} \\
+PI:\hspace{.3cm}&x_{\text{\tiny{$PI$}}}=M\sin(t)+N\cos(t)
+\end{align*}
+\small
+\begin{equation*}
+(-M\sin(t)-N\cos(t))-(M\cos(t)-N\sin(t))-6(M\sin(t)+N\cos(t))=150\sin(t)
+\end{equation*}
+\normalsize
+\begin{align*}
+(-M+N-6M)\sin(t)&=150\sin(t) & (-N-M-6N)\cos(t)&=0 \\
+-7M+N&=150 & M+7N&=0 \\
+& & M&=-7N \\
+-7(-7N)+N&=150 & & \\
+50N&=150 & & \\
+\end{align*}
+\begin{equation*}
+N=3 \hspace{.3cm} \Rightarrow \hspace{.3cm} M=-21
+\end{equation*}
+\begin{equation*}
+GS:\,\, x=Ae^{-2t}+Be^{3t}-21\sin(t)+3\cos(t)
+\end{equation*}
+And from the initial conditions, at $t=0$, $A+B+3=0$. \newline \par
+
+Using the newfound general solution,
+\begin{equation*}
+\dot{x}=-2Ae^{-2t}+3Be^{3t}-3\sin(t)-21\cos(t)
+\end{equation*}
+And using one of the initial equations,
+\begin{align*}
+\dot{x}&=4x_{\text{\tiny{$GS$}}}-y+50\sin(t) \\
+&=4\left[ Ae^{-2t}+Be^{3t}-21\sin(t)+3\cos(t) \right] -y+50\sin(t) \\
+&=4Ae^{-2t}+4Be^{3t}-84\sin(t)+12\cos(t)-y+50\sin(t) \\
+&=4Ae^{-2t}+4Be^{3t}-34\sin(t)+12\cos(t)-y
+\end{align*}
+
+Using the initial conditions;
+\begin{align*}
+\dot{x}&=-2A+3B-0-21 & &\text{Using $GS$} \\
+\dot{x}&=4A+4B-0+12-15 & &\text{Using original equation} \\
+\end{align*}
+\vspace{-1.2cm}
+\begin{equation*}
+-18=6A+B
+\end{equation*} \newline
+This gives a pair of simultaneous equations for $A$, and $B$:
+\begin{align*}
+-18&=6A+B \\
+0&=A+B+3 \\
+& \\
+-18&=6A-3-A \\
+-15&=5A \\
+& \\
+\Rightarrow A&=-3 \\
+B&=0
+\end{align*}
+
+Therefore,
+\begin{equation*}
+x_{\text{\tiny{$GS$}}}=-3e^{-2t}+3\cos(t)-21\sin(t)
+\end{equation*}
+And so
+\small
+\begin{align*}
+y&=-12e^{-2t}+12\cos(t)-84\sin(t)-\left(6e^{-2t}-3\sin(t)-21\cos(t)\right)+50\sin(t) \\
+&=-18e^{-2t}+33\cos(t)-31\sin(t)
+\end{align*}
+\normalsize
+
+Therefore the final solutions for $x$, and $y$, are
+\begin{align*}
+x&=-3e^{-2t}+3\cos(t)-21\sin(t) \\
+y&=-18e^{-2t}+33\cos(t)-31\sin(t)
+\end{align*}
+\vspace{0.5cm}
+
+\end{document}
