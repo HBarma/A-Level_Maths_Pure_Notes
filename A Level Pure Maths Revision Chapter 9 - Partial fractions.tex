@@ -1,0 +1,175 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{datetime}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{tabularray}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{makecell}
+\usepackage{courier}
+\usepackage[font=small, skip=0pt]{caption}
+\usepackage[font=scriptsize, skip=0pt]{subcaption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{matlab-prettifier}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{bigfoot}
+\usepackage{filecontents}
+\usepackage[nottoc]{tocbibind}
+
+\graphicspath{ {./mathimages/} }
+
+\newdateformat{Datea}{\THEDAY\ \monthname[\THEMONTH] \THEYEAR}
+\newdateformat{Dateb}{\monthname[\THEMONTH] \THEYEAR}
+
+%\allowdisplaybreaks
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\cotan}{cotan}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\cosech}{cosech}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccosec}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+
+\DeclareMathOperator{\cis}{cis}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Hatam Barma}
+\chead{\begin{tabular}[t]{@{}l@{}}\\Mathematics and Further Mathematics Pure Revision Summary\end{tabular}}
+\lhead{\Dateb\today}
+\cfoot{Page \thepage}
+
+\renewcommand{\thesection}{\arabic{section}} 
+
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\setcounter{section}{8}
+
+\allowdisplaybreaks
+
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=magenta!70!black
+}
+
+\begin{document}
+
+
+\begin{titlepage}
+   \begin{center}
+       \vspace*{2.5cm}
+	\huge
+       \textbf{A-Level Mathematics and Further Mathematics Pure Revision Summary} \\
+	\vspace{1cm}
+	\Large
+       \textbf{Chapter 9: Partial fractions}
+            
+       \vspace{1.5cm}
+	\LARGE
+       \textbf{Hatam Barma} \\
+	\vspace{0.75cm}
+       \normalsize
+       \emph{Compiled on \Datea\today} \\
+
+       \vfill
+        
+
+	E-mail: hatam.barma@gmail.com
+   \end{center}
+\end{titlepage}
+
+
+\tableofcontents
+
+\clearpage
+\section{Partial fractions}
+\vspace{0.5cm}
+
+\subsection{Partial fractions}
+\label{partialfractions1}
+\begin{itemize}
+\item A Level M Year 2 \hspace{1cm} \phantom{ AS / } Pages 99 -- 104
+\item A Level M Year 2 \hspace{1cm} \phantom{ AS / } Pages 239 -- 243
+\end{itemize} \par
+Partial fractions is a way of decomposing rational polynomials. Here are a couple of examples;
+\scriptsize
+\begin{align*}
+\frac{1}{(2x-3)}-\frac{3}{2(x+1)}&=\frac{-4x+11}{2(x+1)(2x-3)} & \frac{\text{Linear}}{\text{Quadratic (distinct factors)}} \\
+\frac{2}{(x-2)}+\frac{5}{(x-2)^{2}}&=\frac{2x+1}{(x-2)^{2}} & \frac{\text{Linear}}{\text{Quadratic (repeated linear factor)}} \\
+\frac{1}{(x)}-\frac{3}{(x)^{2}}+\frac{1}{(3x+5)}&=\frac{4x^{2}-4x-15}{(x)^{2}(3x+5)} & \frac{\text{Quadratic}}{\text{Cubic (one repeated linear factor, one other)}}
+\end{align*}
+\normalsize
+
+To utilise partial fractions, the degree of the numerator must be less than the degree of the denominator. So, to change the degree of the numerator, take out a factor of the denominator from the numerator, and then split the remainder into partial fractions.
+
+\begin{flalign*}
+\frac{x^{3}-5x^{2}+2x+14}{(x-3)^{2}}&\equiv\frac{(x-3)^{2}(x+1)-x+5}{(x-3)^{2}} && \\
+&\equiv \frac{\cancel{(x-3)^{2}}(x+1)}{\cancel{(x-3)^{2}}}+\frac{-x+5}{(x-3)^{2}} && \\
+&\equiv (x+1)+\frac{-x+5}{(x-3)^{2}}
+\end{flalign*}
+\begin{flalign*}
+\frac{-x+5}{(x-3)^{2}}&=\frac{A}{(x-3)}+\frac{B}{(x-3)^{2}} && \\
+&=\frac{A(x-3)+B}{(x-3)^{2}} \hspace{2cm} \Rightarrow A(x-3)+B=-x+5
+\end{flalign*}
+From here, either equate coefficients or substitute in for $x$ (use $x=3$ in this case to eliminate A) $\Rightarrow A=-1$; $B=2$. Therefore;
+\begin{equation*}
+\frac{x^{3}-5x^{2}+2x+14}{(x-3)^{2}}\equiv(x+1)-\frac{1}{(x-3)}+\frac{2}{(x-3)^{2}}
+\end{equation*}
+Partial fractions can be used to integrate functions of rational polynomials more easily.
+\vspace{0.5cm}
+
+
+\subsection{Forms of partial fractions}
+\label{partialfractions2}
+\begin{itemize}
+\item A Level M Year 2 \hspace{1cm} \phantom{ AS / } Pages 99 -- 104
+\item A Level M Year 2 \hspace{1cm} \phantom{ AS / } Pages 239 -- 243
+\end{itemize} \par
+\begin{centering}
+\begin{tblr}{|[.75pt]|l|c|c||[.75pt]}
+\hline[1.25pt]
+Factor of denominator & Example & Partial fraction to include \\ \hline[.75pt]
+Distinct linear & $(2x+5)$ & $\frac{A}{(2x+5)}$ \\ \hline
+Repeated linear & $(2x+7)^{3}$ & $\frac{A}{(2x+7)^{3}}+\frac{B}{(2x+7)^{2}}+\frac{C}{(2x+7)}$ \\ \hline
+\SetCell[r=3]{c} Irreducible Quadratic & $(x^{2}+4)$ & $\frac{Ax+B}{(x^{2}+4)}$  \\
+& $(x^{2}+x+1)$ & $\frac{Ax+B}{x^{2}+x+1}$ \\
+& $(x^{2}+4x+1)$ & $\frac{Ax+B}{x^{2}+4x+1}$ \\ 
+\hline[.75pt]
+\end{tblr}
+\end{centering} \newline \par
+\scriptsize We would choose not to factorise the irreducible quadratics in order to avoid complex roots \normalsize
+\vspace{0.5cm}
+
+\end{document}
