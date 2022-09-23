@@ -1,0 +1,205 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{datetime}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{appendix}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage{cancel}
+\usepackage{tabularray}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{makecell}
+\usepackage{courier}
+\usepackage[font=small, skip=0pt]{caption}
+\usepackage[font=scriptsize, skip=0pt]{subcaption}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{matlab-prettifier}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{bigfoot}
+\usepackage{filecontents}
+\usepackage[nottoc]{tocbibind}
+
+\graphicspath{ {./mathimages/} }
+
+\newdateformat{Datea}{\THEDAY\ \monthname[\THEMONTH] \THEYEAR}
+\newdateformat{Dateb}{\monthname[\THEMONTH] \THEYEAR}
+
+%\allowdisplaybreaks
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\cotan}{cotan}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\cosech}{cosech}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccosec}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\arsinh}{arsinh}
+\DeclareMathOperator{\arcosh}{arcosh}
+\DeclareMathOperator{\artanh}{artanh}
+
+\DeclareMathOperator{\cis}{cis}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Hatam Barma}
+\chead{\begin{tabular}[t]{@{}l@{}}\\Mathematics and Further Mathematics Pure Revision Summary\end{tabular}}
+\lhead{\Dateb\today}
+\cfoot{Page \thepage}
+
+\renewcommand{\thesection}{\arabic{section}} 
+
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\setcounter{section}{9}
+
+\allowdisplaybreaks
+
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=blue,
+    urlcolor=magenta!70!black
+}
+
+\begin{document}
+
+
+\begin{titlepage}
+   \begin{center}
+       \vspace*{2.5cm}
+	\huge
+       \textbf{A-Level Mathematics and Further Mathematics Pure Revision Summary} \\
+	\vspace{1cm}
+	\Large
+       \textbf{Chapter 10: Sigma summation}
+            
+       \vspace{1.5cm}
+	\LARGE
+       \textbf{Hatam Barma} \\
+	\vspace{0.75cm}
+       \normalsize
+       \emph{Compiled on \Datea\today} \\
+
+       \vfill
+        
+
+	E-mail: hatam.barma@gmail.com
+   \end{center}
+\end{titlepage}
+
+
+\tableofcontents
+
+\clearpage
+\section{Sigma summation}
+\vspace{0.5cm}
+
+
+\subsection{Notation, arithmetic and geometric progressions}
+\begin{itemize}
+\item A Level M Year 2 \hspace{1cm} \phantom{ AS / } Pages 64 -- 89
+\end{itemize} \par
+Where $\{u_{r}\}$ are the terms in a series, the notation
+\begin{equation*}
+S_{n}=\sum_{r=1}^{n}u_{r}=u_{1}+u_{2}+\cdots+u_{n}
+\end{equation*}
+Two useful expansions, and one \emph{invalid} expansion;
+\begin{align*}
+\sum_{i=1}^{n}(x_{i}+y_{i})&=\sum_{i=1}^{n}(x_{i})+\sum_{i=1}^{n}(y_{i}) \\
+\sum_{i=1}^{n}ax_{i}&=a\sum_{i=1}^{n}x_{i} \\
+\sum_{i=1}^{n}x_{i}y_{i}&\,\textcolor{red}{\,\neq}\left(\sum_{i=1}^{n}x_{i}\right)\times\left(\sum_{i=1}^{n}y_{i}\right)
+\end{align*} \newline \par
+
+The sum of an arithmetic progression is:
+\begin{align*}
+S_{n}&=a+(a+d)+(a+2d)+\cdots+(a+(n-1)d) \\
+&=n\left( a+\frac{d(n-1)}{2} \right)=\frac{n(u_{1}+u_{n})}{2}
+\end{align*} \newline \par
+
+The sum of a geometric progression requires a little more work. 
+\begin{align*}
+S_{n}&=a+ar+ar^{2}+\cdots+ar^{n-1} \\
+rS_{n}&=\phantom{a\,+\,\,}ar+ar^{2}+\cdots+ar^{n-1}+ar^{n}\\
+\end{align*}
+\vspace{-1.5cm}
+\begin{align*}
+S_{n}-rS_{n}&=a-ar^{n} \\
+S_{n}&=\frac{a(1-r^{n})}{(1-r)}
+\end{align*}
+A geometric series will converge if $-1<r<1$. This means that it tends to some finite limit as $n\to\infty$. Therefore, $S_{\infty}=\lim_{n\to\infty}S_{n}$
+\vspace{0.5cm}
+
+
+\subsection{Standard results}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 10 -- 15
+\end{itemize} \par
+Some useful standard results of sums, which can be obtained using the method of differences (section \ref{methodofdifferences})
+\begin{flalign*}
+\sum_{k=1}^{n}k&=\frac{1}{2}n(n+1) && \\
+\sum_{k=1}^{n}k^{2}&=\frac{1}{6}n(n+1)(2n+1) && \\
+\sum_{k=1}^{n}k^{3}&=\frac{1}{4}n^{2}(n+1)^{2} \hspace{2cm}=\left( \frac{1}{2}n(n+1) \right)^{2}=\left( \sum_{k=1}^{n}k \right)^{2} && \\
+\end{flalign*}
+
+
+\subsection{Method of differences}
+\label{methodofdifferences}
+\begin{itemize}
+\item A Level FM Year 2 \hspace{1cm} \phantom{AS /} Pages 15 -- 20
+\end{itemize} \par
+To evaluate a summation using the method of differences, write out the first few and last few terms to see which ones cancel, and which ones are left behind. For example, take the summation:
+\begin{equation*}
+\sum_{r=1}^{n}\frac{r}{(r+2)(r+3)(r+4)}
+\end{equation*}
+This can be split into partial fractions as follows:
+\begin{equation*}
+\frac{r}{(r+2)(r+3)(r+4)}=-\frac{1}{(r+2)}+\frac{3}{(r+3)}-\frac{2}{(r+4)}
+\end{equation*}
+Therefore
+\begin{equation*}
+\sum_{r=1}^{n}\frac{r}{(r+2)(r+3)(r+4)}=\sum_{r=1}^{n}\left[ -\frac{1}{(r+2)}+\frac{3}{(r+3)}-\frac{2}{(r+4)} \right]
+\end{equation*}
+So, writing out the first few terms of this, we can see quite easily that most of the terms will cancel 
+\begin{flalign*}
+\sum_{r=1}^{n}\frac{r}{(r+2)(r+3)(r+4)}=&-\phantom{0\,}\frac{1}{(3)}\phantom{+\,}+\phantom{0\,}\frac{3}{(4)}\phantom{+\,}-\cancel{\phantom{0\,}\frac{2}{(5)}\phantom{+\,}} && \\
+&-\phantom{0\,}\frac{1}{(4)}\phantom{+\,}+\cancel{\phantom{0\,}\frac{3}{(5)}\phantom{+\,}}-\cancel{\phantom{0\,}\frac{2}{(6)}\phantom{+\,}} \\
+&-\cancel{\phantom{0\,}\frac{1}{(5)}\phantom{+\,}}+\cancel{\phantom{0\,}\frac{3}{(6)}\phantom{+\,}}-\cancel{\phantom{0\,}\frac{2}{(7)}\phantom{+\,}} \\
+&\cdots \\
+&-\cancel{\phantom{0\,}\frac{1}{(n)}\phantom{+\,}}+\cancel{\frac{3}{(n+1)}}-\cancel{\frac{2}{(n+2)}} \\
+&-\cancel{\frac{1}{(n+1)}}+\cancel{\frac{3}{(n+2)}}-\frac{2}{(n+3)} \\
+&-\cancel{\frac{1}{(n+2)}}+\frac{3}{(n+3)}-\frac{2}{(n+4)} \\
+\end{flalign*}
+Therefore
+\begin{align*}
+\sum_{r=1}^{n}\frac{r}{(r+2)(r+3)(r+4)}&=-\frac{1}{3}+\frac{3}{4}-\frac{1}{4}-\frac{2}{(n+3)}+\frac{3}{(n+3)}-\frac{2}{(n+4)} \\
+&=\frac{1}{6}+\frac{1}{(n+3)}-\frac{2}{(n+4)} \\
+&=\frac{1}{6}+\frac{n+4}{(n+3)(n+4)}-\frac{2n+6}{(n+3)(n+4)} \\
+&=\frac{1}{6}-\frac{n+2}{(n+3)(n+4)}\\
+\end{align*}
+
+\vspace{0.5cm}
+
+\end{document}
